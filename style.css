@@ -1,0 +1,219 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Preloader container */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d url('./assets/image/7Cff.gif') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      visibility: visible;
+    }
+
+    /* Add overlay for better visibility */
+    #preloader::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 13, 13, 0.5);
+    }
+
+    /* Preloader text styles */
+    .preloader-text {
+      color: #060606;
+      margin-top: 20px;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: textFade 1.5s ease-in-out infinite;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Triangle loader styles */
+    .loader-triangle-3 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .loader-triangle-3 polygon {
+      stroke: #ff0000;
+      stroke-dasharray: 17;
+      animation: anm-tr-3-move 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+    }
+
+    /* Rest of the CSS remains the same */
+    @keyframes textFade {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    #preloader.hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @keyframes anm-tr-3-move {
+      to {
+        stroke-dashoffset: -136;
+      }
+    }
+
+    .content {
+      padding: 50px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 0.3s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+.top-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.bottom-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+    width: 35%;
+}
+
+h1{
+    color: #5fbaa7;
+    text-align: center;
+}
+
+p{
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.curr-div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.curr{
+    margin: 0;
+    padding: 10px 20px 10px 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #dedede;
+    background: transparent;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-position: right 10px top 50%, 0, 0;
+    background-size: 12px auto, 100%;
+    background-repeat: no-repeat;
+    font-size: 16px;
+}
+
+.amt{
+    margin: 0;
+    padding: 4px;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    text-align: right;
+}
+
+.amt:focus, .curr:focus, .btn:focus{
+    outline: none;
+}
+
+.btn-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.btn{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #5fbaa7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.details{
+    color: #43076e;
+    font-size: 14px;
+}
+
+/* Media Query */
+@media (max-width: 600px) {
+    .amt{
+        width: 70%;
+    }
+    .bottom-container{
+        width: 70%;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.footer small {
+    display: block;
+    color: #ccc;
+    margin: 2px 0;
+    line-height: 1.3;
+}
+
+.footer .message {
+    color: #eb0c0c;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.footer .copyright {
+    font-size: 20px;
+    color: #040000;
+}
