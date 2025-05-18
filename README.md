@@ -10,7 +10,7 @@ This website is used to calculate the current exhange rate of currencies.
 
 ## Screenshots
 
-![Currency_converter](./assets/image/Screen%20Recording%202025-05-18%20183251.mp4)
+![Currency_converter](./assets/image/Screenshot%202025-05-18%20184116.png)
 
 ## Getting Started
 
